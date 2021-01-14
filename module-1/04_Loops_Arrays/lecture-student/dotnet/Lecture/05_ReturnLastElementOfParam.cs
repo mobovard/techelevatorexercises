@@ -9,7 +9,11 @@
         */
         public int ReturnLastElementOfParam(int[] passedInArray)
         {
-            return 1;
+            int arrayLength = passedInArray.Length;
+
+            int lastElement = passedInArray[arrayLength - 1];
+
+            return lastElement;
         }
 
         /*
@@ -18,6 +22,9 @@
         */
         public int ReturnSecondToLastElementOfParam(int[] passedInArray)
         {
+            int arrayLength = passedInArray.Length - 2;
+            int lastElement = passedInArray[arrayLength];
+                //need to add the rest of this exercise and 5c as well from lecture video
             return 1;
         }
 

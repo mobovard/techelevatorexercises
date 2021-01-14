@@ -13,8 +13,13 @@
         {
             int sum = 0;
 
+            for (int i = 0; i <= arrayToLoopThrough.Length - 1; i += 2)
+            {
+                sum = sum + arrayToLoopThrough[i];
+            }
 
-            return sum;
+
+                return sum;
         }
     }
 }

@@ -24,7 +24,40 @@
          */
         public string YourCakeAndEatItToo(double mealAmount, bool isBirthday)
         {
-            return "";
+            string output = "";
+       
+            if (isBirthday)
+            {
+               mealAmount += 5;
+
+            }
+            if (mealAmount <= 10)
+            {
+                output = "standard";
+            }
+
+            else if (mealAmount <= 15)
+            {
+                output = "special";
+            }
+            else if (mealAmount > 15)
+            {
+                output = "ginormous";
+            }
+            
+            return output;
         }
     }
 }
+
+
+/* 
+ * 3 types of returns for dessert standard special and ginormous
+ * meal amount decides which free dessert
+ * amount <= 10 standard
+ * amount <= 15 special
+ * amount > 15 ginormous
+ * 
+ * UNLESS it is birthday then an additional 5 dollars is added to amount
+ * 
+ * */
