@@ -11,7 +11,18 @@
          */
         public bool In3050(int a, int b)
         {
-            return false;
+            bool output = false;
+
+            if (a >= 30 && a <= 40 && b >= 30 && b <= 40)
+            {
+                output = true;
+            }
+            if (a >= 40 && a <= 50 && b >= 40 && b <= 50)
+            {
+                output = true;
+            }
+                
+                return output;
         }
     }
 }

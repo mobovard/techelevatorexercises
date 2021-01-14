@@ -11,7 +11,28 @@
        */
         public bool PosNeg(int a, int b, bool negative)
         {
-            return false;
+            bool output = false;
+
+            if (negative == true)
+            {
+                if (a < 0 && b < 0)
+                {
+                    output = true;
+                } 
+            }
+            else
+            {
+                if (a > 0 && b < 0)
+                {
+                    output = true;
+                }
+                
+                if (a < 0 && b > 0)
+                {
+                    output = true;
+                }
+            }
+            return output;
         }
     }
 }

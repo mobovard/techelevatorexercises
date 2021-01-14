@@ -10,7 +10,19 @@
          */
         public bool IcyHot(int temp1, int temp2)
         {
-            return false;
+            bool output = false;
+
+            if (temp1 > 100 && temp2 < 0)
+            {
+                output = true;
+            }
+            
+            if (temp1 < 0 && temp2 > 100)
+            {
+                output = true;
+            }
+
+            return output;
         }
     }
 }

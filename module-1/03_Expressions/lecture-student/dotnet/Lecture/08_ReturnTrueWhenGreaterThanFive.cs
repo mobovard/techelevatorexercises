@@ -9,15 +9,16 @@
         */
         public bool ReturnTrueWhenGreaterThanFive(int number)
         {
+            bool output = true;
             if (number > 5)
             {
-
+                output = true;
             }
             else
             {
-
+                output = false;
             }
-            return false;
+            return output;
         }
     }
 }

@@ -10,7 +10,13 @@
          */
         public bool In1020(int a, int b)
         {
-            return false;
+            bool output = false;
+
+            if ((a >= 10 && a <= 20) || (b >= 10 && b <= 20))
+            {
+                output = true;
+            }    
+            return output;
         }
     }
 }

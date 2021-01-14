@@ -9,12 +9,13 @@
         */
         public bool ReturnTrueWhenOneEqualsOne()
         {
+            bool output = false;
             if (1 == 1)
             {
-                return false;
+                output = true;
             }
 
-            return false;
+            return output;
         }
     }
 }

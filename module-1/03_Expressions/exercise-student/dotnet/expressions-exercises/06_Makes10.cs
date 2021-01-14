@@ -10,7 +10,19 @@
         */
         public bool Makes10(int a, int b)
         {
-            return false;
+            bool output = false;
+
+            if (a == 10 || b == 10)
+            {
+                output = true;
+            }
+            if (a + b == 10)
+            {
+                output = true;
+            }
+
+
+            return output;
         }
 
     }

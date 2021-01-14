@@ -7,9 +7,10 @@
         Change it so that it still returns an int but something other than 1.
         TOPIC: Method Signatures & Tests
         */
+        //return type //method name //parameter
         public int ReturnNotOne()
         {
-            return 1;
+            return 2;
         }
     }
 }

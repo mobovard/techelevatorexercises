@@ -9,12 +9,13 @@
         */
         public bool ReturnTrueFromIf()
         {
+            bool output = false;
             if (true)
             {
-                return false;
+                output = true;
             }
 
-            return false;
+            return output;
         }
     }
 }

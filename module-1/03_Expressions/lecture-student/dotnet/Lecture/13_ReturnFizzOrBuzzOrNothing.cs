@@ -11,7 +11,41 @@
          */
         public string ReturnFizzOrBuzzOrNothing(int number)
         {
-            return null;
+            string output = "";
+
+            if (number == 5)
+            {
+                output = "Buzz";
+            }
+            else if (number == 3)
+            {
+                output = "Fizz";
+            }
+
+            return output;
         }
     }
 }
+            
+            
+            
+            
+            
+            /* one way of answering the question
+
+            if (number == 3) 
+            {
+                return "Fizz";
+            }    
+            else if (number ==5) {
+                return "Buzz";
+            } else
+            {
+                return "";
+            }
+            
+
+        }
+    }
+}
+*/
