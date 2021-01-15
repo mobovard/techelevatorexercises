@@ -11,7 +11,17 @@
          */
         public bool SameFirstLast(int[] nums)
         {
-            return false;
+            int arrayLength = nums.Length - 1;
+            int firstElement = nums[0];
+            int lastElement = nums[arrayLength];
+            bool trueAndFirstLast = false;
+
+            if (arrayLength > 1 && (firstElement == lastElement))
+            {
+                trueAndFirstLast = true;
+            }
+
+            return trueAndFirstLast;
         }
     }
 }

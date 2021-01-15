@@ -11,7 +11,17 @@
          */
         public bool FirstLast6(int[] nums)
         {
-            return false;
+            bool sixFirstOrLast = false;
+            int lastElement = nums[nums.Length - 1];
+            
+            
+                if (nums[0] == 6 || lastElement == 6)
+                {
+                    sixFirstOrLast = true;
+                }
+             
+                return sixFirstOrLast;
+            
         }
     }
 }

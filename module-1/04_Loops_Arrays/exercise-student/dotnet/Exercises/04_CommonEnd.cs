@@ -11,7 +11,20 @@
          */
         public bool CommonEnd(int[] a, int[] b)
         {
-            return false;
+            int aFirstElement = a[0];
+            int bFirstElement = b[0];
+            int aLengthIndex = a.Length - 1;
+            int aLastElement = a[aLengthIndex];
+            int bLengthIndex = b.Length - 1;
+            int bLastElement = b[bLengthIndex];
+
+            bool areEqual = false;
+            if ((aFirstElement == bFirstElement) || (aLastElement == bLastElement))
+            {
+                areEqual = true;
+            }
+
+            return areEqual;
         }
     }
 }
