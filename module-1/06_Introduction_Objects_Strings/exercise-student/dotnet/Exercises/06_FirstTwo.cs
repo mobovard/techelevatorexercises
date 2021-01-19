@@ -12,7 +12,22 @@
         */
         public string FirstTwo(string str)
         {
-            return null;
+            if (str.Length >= 2)
+            {
+                string firstTwo = str.Substring(0, 2);
+                return firstTwo;
+            }
+            else if (str.Length == 1)
+            {
+                string firstChar = str.Substring(0, 1);
+                return firstChar;
+            }
+            else
+            {
+                return "";
+               
+            }
+            
         }
     }
 }

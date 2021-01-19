@@ -12,7 +12,19 @@
         */
         public string ComboString(string a, string b)
         {
-            return null;
+            string longString = "";
+            string shortString = "";
+            if (a.Length > b.Length)
+            {
+                shortString = b;
+                longString = a;
+            }
+            else
+            {
+                shortString = a;
+                longString = b;
+            }
+            return shortString + longString + shortString;
         }
     }
 }

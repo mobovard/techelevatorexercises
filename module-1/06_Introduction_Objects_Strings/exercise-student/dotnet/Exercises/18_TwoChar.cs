@@ -12,7 +12,18 @@
         */
         public string TwoChar(string str, int index)
         {
-            return null;
+            string output = "";
+            if (index <= str.Length - 2 && index > 0)
+            {
+                output = str.Substring(index, 2);
+            }
+            else
+            {
+                
+                output = str.Substring(0, 2);
+            }
+
+            return output;
         }
     }
 }

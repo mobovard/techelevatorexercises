@@ -15,7 +15,7 @@ namespace Fibonacci
             int currentFib = 1;
             int lastFib = 0;
             int nextFib = 0;
-            while (inputAsInt > currentFib)
+            while (inputAsInt >= currentFib)
             {
                 fibString = fibString + ", " + currentFib;
                 nextFib = currentFib + lastFib;

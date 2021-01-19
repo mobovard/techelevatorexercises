@@ -12,8 +12,11 @@
         */
         public string MakeOutWord(string outword, string word)
         {
+            string firstTwo = outword.Substring(0, 2);
+            string lastTwo = outword.Substring(2, 2);
 
-            return null;
+
+            return ($"{firstTwo}{word}{lastTwo}");
         }
     }
 }

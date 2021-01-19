@@ -10,6 +10,21 @@
         */
         public bool DoubleX(string str)
         {
+            for (int i = 0; i < str.Length - 1; i++)
+            {
+                if (str[i] == 'x' && i == str.Length - 1)
+                {
+                    return false;
+                }
+                else if (str[i] == 'x' && str[i + 1] == 'x')
+                {
+                    return true;
+                }
+                else if (str[i] == 'x')
+                {
+                    return false;
+                }
+            }
             return false;
         }
     }
