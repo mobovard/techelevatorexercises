@@ -15,7 +15,23 @@ namespace Exercises
          */
         public Dictionary<string, int> PeterPaulPartnership(Dictionary<string, int> peterPaul)
         {
-            return null;
+            int peterMoney = peterPaul["Peter"];
+            int PaulMoney = peterPaul["Paul"];
+
+            if (peterMoney >= 5000 && PaulMoney >= 10000 )
+            {
+                int PeterPaulPartnership = (1 / 4 * (peterMoney)) + (1 / 4 * (PaulMoney));
+                peterPaul.Add("PeterPaulPartnership", PeterPaulPartnership);
+                int newPeterMoney = peterMoney - (1 / 4 * (peterMoney));
+                int newPaulMoney = PaulMoney - (1 / 4 * (PaulMoney));
+                peterPaul["Peter"] = newPeterMoney;
+                peterPaul["Paul"] = newPaulMoney;
+            }
+
+            return peterPaul;
         }
     }
 }
+//start with does peter have > 50 and does paul have > 100
+// if yes then take 1/4 of each of their worth and add together in a new entry in the dictionary
+//

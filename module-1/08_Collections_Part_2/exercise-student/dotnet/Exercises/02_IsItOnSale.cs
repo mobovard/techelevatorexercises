@@ -28,7 +28,31 @@ namespace Exercises
          */
         public double IsItOnSale(string itemNumber)
         {
-            return -1.0;
+            Dictionary<string, double> itemsAndDiscounts = new Dictionary<string, double>()
+            {
+                {"kitchen4001", 0.20 },
+                {"garage1070", 0.15 },
+                {"livingroom", 0.10 },
+                {"kitchen6073", 0.40 },
+                {"bedroom3434", 0.60 },
+                {"bath0073", 0.15 },
+                
+            };
+            if (itemNumber == null)
+            {
+                return 0.00;
+            }
+            string itemNumberLowercase = itemNumber.ToLower();
+            if (itemsAndDiscounts.ContainsKey(itemNumberLowercase))
+            {
+                return itemsAndDiscounts[itemNumberLowercase];
+            }
+                    
+            return 0.00;
         }
     }
 }
+//given SKU return discount percentage
+// need to also have it case insensitive
+//if key not found return 0.00
+// how to know if item is not on sale? Does that mean it is not in our dictionary?

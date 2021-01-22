@@ -18,7 +18,27 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            var wordCountDictionary = new Dictionary<string, int>();
+            for (int i = 0; i < words.Length; i++)
+            {
+                string currentString = words[i];
+
+                if (wordCountDictionary.ContainsKey(currentString))
+                {
+                    wordCountDictionary[currentString] = wordCountDictionary[currentString] + 1;
+                }
+                else
+                {
+                    wordCountDictionary.Add(currentString, 1);
+                }
+
+            }
+            return wordCountDictionary;
+       
         }
     }
 }
+
+//given an array of strings need to get the key is a string and the value is the number of times it appears
+//loop through array and use if/ else. increment value each time it appears
+//

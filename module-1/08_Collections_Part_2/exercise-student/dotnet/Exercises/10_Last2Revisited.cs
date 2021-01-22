@@ -21,7 +21,24 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+            Dictionary<string, int> countingPairs = new Dictionary<string, int>();
+            foreach (string word in words)
+            {
+                int numberOfXs = 0;
+                for (int i = 0; i < word.Length - 2; i++)
+                {
+                    if (word.Substring(i, 2) == word.Substring(word.Length - 2))
+                    {
+                        numberOfXs++;
+                    }
+                    
+                }
+                countingPairs[word] = numberOfXs;
+            }
+            return countingPairs;
         }
     }
 }
+//check each pair at each index and see if the pair is equal to the first pair
+//the dictionary will be the key - firstTwo and the value - number of times it appears but the last one doesn't count one
+//create a foreach loop first

@@ -14,7 +14,25 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null;
+            var begAndEnd = new Dictionary<string, string>();
+            for (int i = 0; i < words.Length; i++)
+            {
+                string firstCharacter = words[i].Substring(0, 1);
+                string lastCharacter = words[i].Substring(words[i].Length - 1, 1);
+                if (begAndEnd.ContainsKey(firstCharacter))
+                {
+                    begAndEnd[firstCharacter] = lastCharacter;
+                }
+                else
+                {
+                    begAndEnd.Add(firstCharacter, lastCharacter);
+                }
+                
+            }
+            return begAndEnd;
         }
     }
 }
+//start with array of strings and return dictionary of strings
+// use substring to get key and values
+// first letter is key and last letter is value
