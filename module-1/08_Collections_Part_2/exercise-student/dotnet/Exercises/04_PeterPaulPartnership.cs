@@ -20,10 +20,10 @@ namespace Exercises
 
             if (peterMoney >= 5000 && PaulMoney >= 10000 )
             {
-                int PeterPaulPartnership = (1 / 4 * (peterMoney)) + (1 / 4 * (PaulMoney));
+                int PeterPaulPartnership = (int) ( 0.25 * peterMoney + 0.25 * PaulMoney );
+                int newPeterMoney = (int)(peterMoney - (0.25 * peterMoney));
+                int newPaulMoney = (int)(PaulMoney - (0.25 * PaulMoney));
                 peterPaul.Add("PeterPaulPartnership", PeterPaulPartnership);
-                int newPeterMoney = peterMoney - (1 / 4 * (peterMoney));
-                int newPaulMoney = PaulMoney - (1 / 4 * (PaulMoney));
                 peterPaul["Peter"] = newPeterMoney;
                 peterPaul["Paul"] = newPaulMoney;
             }
