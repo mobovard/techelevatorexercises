@@ -28,7 +28,7 @@
         {
             get
             {
-                return TotalFirstClassSeats - AvailableFirstClassSeats;
+                return TotalFirstClassSeats - BookedFirstClassSeats;
             }
         }
 
