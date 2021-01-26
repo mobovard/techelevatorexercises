@@ -10,7 +10,7 @@
         //polymorphism, yo
         public override string MakeSound()
         {
-            return "moo";
+            return "moo, yo";
         }
     }
 }

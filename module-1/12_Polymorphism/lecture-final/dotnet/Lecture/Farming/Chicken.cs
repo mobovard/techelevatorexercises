@@ -2,6 +2,7 @@
 
 namespace Lecture.Farming
 {
+    //can only inherit from a single class(Single Inheritance) BUT can implement multiple interfaces
     public class Chicken : FarmAnimal, IEggProducer
     {
         public Chicken() : base("Chicken")
