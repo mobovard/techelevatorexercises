@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Exercises.Tests
 {
@@ -147,7 +149,7 @@ namespace Exercises.Tests
     {
 
         [TestMethod]
-        public void FrontTimesTest1()
+        public void FrontTimesTestCho2()
         {
             FrontTimes frontTimes = new FrontTimes();
 
@@ -158,7 +160,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void FrontTimesTest2()
+        public void FrontTimesTestCho3()
         {
             FrontTimes frontTimes = new FrontTimes();
 
@@ -169,7 +171,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void FrontTimesTest3()
+        public void FrontTimesTestAbc3()
         {
             FrontTimes frontTimes = new FrontTimes();
 
@@ -187,7 +189,7 @@ namespace Exercises.Tests
     {
 
         [TestMethod]
-        public void Less20Test1()
+        public void Less20Test18()
         {
             Less20 less20 = new Less20();
 
@@ -198,7 +200,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void Less20Test2()
+        public void Less20Test19()
         {
             Less20 less20 = new Less20();
 
@@ -209,7 +211,7 @@ namespace Exercises.Tests
         }
 
         [TestMethod]
-        public void Less20Test3()
+        public void Less20Test20()
         {
             Less20 less20 = new Less20();
 
@@ -222,5 +224,303 @@ namespace Exercises.Tests
 
 
     }
+
+    [TestClass]
+    public class Lucky13Tests
+    {
+
+        [TestMethod]
+        public void Lucky13TestIsLucky()
+        {
+            int[] input = { 0, 2, 4 };
+            Lucky13 lucky13 = new Lucky13();
+
+            bool actual = lucky13.GetLucky(input);
+
+            Assert.AreEqual(true, actual);
+
+        }
+
+        [TestMethod]
+        public void Lucky13TestNotLucky1()
+        {
+            int[] input = { 1, 2, 3 };
+            Lucky13 lucky13 = new Lucky13();
+
+            bool actual = lucky13.GetLucky(input);
+
+            Assert.AreEqual(false, actual);
+
+        }
+
+        [TestMethod]
+        public void Lucky13TestNotLucky2()
+        {
+            int[] input = { 1, 2, 4 };
+            Lucky13 lucky13 = new Lucky13();
+
+            bool actual = lucky13.GetLucky(input);
+
+            Assert.AreEqual(false, actual);
+
+        }
+    }
+
+    [TestClass]
+    public class MaxEnd3Tests
+    {
+
+        [TestMethod]
+        public void MaxEndTest1()
+        {
+            int[] input = { 1, 2, 3 };
+            MaxEnd3 maxEnd3 = new MaxEnd3();
+
+            int[] actual = maxEnd3.MakeArray(input);
+
+            int[] expected = { 3, 3, 3 };
+            Assert.AreEqual(true, actual.SequenceEqual(expected));
+
+        }
+
+        [TestMethod]
+        public void MaxEndTest2()
+        {
+            int[] input = { 11, 5, 9 };
+            MaxEnd3 maxEnd3 = new MaxEnd3();
+
+            int[] actual = maxEnd3.MakeArray(input);
+
+            int[] expected = { 11, 11, 11 };
+            Assert.AreEqual(true, actual.SequenceEqual(expected));
+
+        }
+
+        [TestMethod]
+        public void MaxEndTest3()
+        {
+            int[] input = { 2, 11, 3 };
+            MaxEnd3 maxEnd3 = new MaxEnd3();
+
+            int[] actual = maxEnd3.MakeArray(input);
+
+            int[] expected = { 3, 3, 3 };
+            Assert.AreEqual(true, actual.SequenceEqual(expected));
+
+        }
+    }
+
+    [TestClass]
+    public class NonStartTests
+    {
+
+        [TestMethod]
+        public void NonstartTest1()
+        {
+            NonStart nonStart = new NonStart();
+
+            string actual = nonStart.GetPartialString("Hello", "There");
+
+            Assert.AreEqual("ellohere", actual);
+
+        }
+
+        [TestMethod]
+        public void NonstartTest2()
+        {
+            NonStart nonStart = new NonStart();
+
+            string actual = nonStart.GetPartialString("java", "code");
+
+            Assert.AreEqual("avaode", actual);
+
+        }
+
+        [TestMethod]
+        public void NonstartTest3()
+        {
+            NonStart nonStart = new NonStart();
+
+            string actual = nonStart.GetPartialString("shotl", "java");
+
+            Assert.AreEqual("hotlava", actual);
+
+        }
+
+    }
+
+    [TestClass]
+    public class SameFirstLastTests
+    {
+
+      
+        [TestMethod]
+        public void SameFirstLastTest1()
+        {
+            int[] input = { 1, 2, 3 };
+            SameFirstLast sameFirstLast = new SameFirstLast();
+
+            bool actual = sameFirstLast.IsItTheSame(input);
+
+            Assert.AreEqual(false, actual);
+        }
+
+        [TestMethod]
+        public void SameFirstLastTest2()
+        {
+            int[] input = { 1, 2, 3, 1 };
+            SameFirstLast sameFirstLast = new SameFirstLast();
+
+            bool actual = sameFirstLast.IsItTheSame(input);
+
+            Assert.AreEqual(true, actual);
+        }
+
+        [TestMethod]
+        public void SameFirstLastTest3()
+        {
+            int[] input = { 1, 2, 1 };
+            SameFirstLast sameFirstLast = new SameFirstLast();
+
+            bool actual = sameFirstLast.IsItTheSame(input);
+
+            Assert.AreEqual(true, actual);
+        }
+
+    }
+
+    [TestClass]
+    public class StringBitsTests
+    {
+       
+        [TestMethod]
+        public void StringBitsTestHello()
+        {
+            StringBits stringBits = new StringBits();
+
+            string actual = stringBits.GetBits("Hello");
+
+            Assert.AreEqual("Hlo" , actual);
+        }
+
+        [TestMethod]
+        public void StringBitsTestHi()
+        {
+            StringBits stringBits = new StringBits();
+
+            string actual = stringBits.GetBits("Hi");
+
+            Assert.AreEqual("H", actual);
+        }
+        [TestMethod]
+        public void StringBitsTestHeeololeo()
+        {
+            StringBits stringBits = new StringBits();
+
+            string actual = stringBits.GetBits("Heeololeo");
+
+            Assert.AreEqual("Hello", actual);
+        }
+
+    }
+
+    [TestClass]
+    public class WordCountTest
+    {
+
+        [TestMethod]
+        public void WordCountTestBlackSheep()
+        {
+            WordCount wordCount = new WordCount();
+            string[] input = {"ba", "ba", "black", "sheep" };
+            Dictionary<string, int> expected = new Dictionary<string, int>()
+            {
+                {"ba", 2 },
+                {"black", 1 },
+                {"sheep", 1 }
+            };
+
+            Dictionary<string, int> actual = wordCount.GetCount(input);
+
+            foreach (KeyValuePair<string, int> keyValPair in expected)
+            {
+                if (!actual.ContainsKey(keyValPair.Key))
+                {
+                    Assert.Fail();
+                }
+                Assert.AreEqual(keyValPair.Value, actual[keyValPair.Key]);
+            }
+        }
+
+        [TestMethod]
+        public void WordCountTestABC()
+        {
+            WordCount wordCount = new WordCount();
+            string[] input = { "a", "b", "a", "c", "b" };
+            Dictionary<string, int> expected = new Dictionary<string, int>()
+            {
+                {"a", 2 },
+                {"b", 2 },
+                {"c", 1 }
+            };
+
+            Dictionary<string, int> actual = wordCount.GetCount(input);
+
+            foreach (KeyValuePair<string, int> keyValPair in expected)
+            {
+                if (!actual.ContainsKey(keyValPair.Key))
+                {
+                    Assert.Fail();
+                }
+                Assert.AreEqual(keyValPair.Value, actual[keyValPair.Key]);
+            }
+        }
+        [TestMethod]
+        public void WordCountTestEmpty()
+        {
+            WordCount wordCount = new WordCount();
+            string[] input = {};
+            Dictionary<string, int> expected = new Dictionary<string, int>()
+            {
+
+            };
+
+            Dictionary<string, int> actual = wordCount.GetCount(input);
+
+            foreach (KeyValuePair<string, int> keyValPair in expected)
+            {
+                if (!actual.ContainsKey(keyValPair.Key))
+                {
+                    Assert.Fail();
+                }
+                Assert.AreEqual(keyValPair.Value, actual[keyValPair.Key]);
+            }
+        }
+
+        public void WordCountTestCBA()
+        {
+            WordCount wordCount = new WordCount();
+            string[] input = { "c", "b", "a" };
+            Dictionary<string, int> expected = new Dictionary<string, int>()
+            {
+                {"c", 3 },
+                {"b", 2 },
+                {"a", 1 }
+            };
+
+            Dictionary<string, int> actual = wordCount.GetCount(input);
+
+            foreach (KeyValuePair<string, int> keyValPair in expected)
+            {
+                if (!actual.ContainsKey(keyValPair.Key))
+                {
+                        Assert.Fail();
+                }
+                Assert.AreEqual(keyValPair.Value, actual[keyValPair.Key]);
+            }
+        }
+       
+    }
+
 }
 
