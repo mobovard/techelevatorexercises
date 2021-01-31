@@ -4,11 +4,11 @@ using System.Text;
 
 namespace PetElevator.CRM
 {
-    class Pet
+    public class Pet
     {
         public string PetName { get; set; }
         public string Species { get; set; }
-        List<string> Vaccinations { get; set; } = new List<string>();
+        public List<string> Vaccinations { get; set; } = new List<string>();
 
         public Pet(string petName, string species)
         {
@@ -16,6 +16,15 @@ namespace PetElevator.CRM
             Species = species;
         }
 
+        public string ListVaccinations()
+        {
+            string vaccinations = String.Join(", ", Vaccinations.ToArray());
+            return vaccinations;
+        }
+
+
 
     }
+
+
 }
