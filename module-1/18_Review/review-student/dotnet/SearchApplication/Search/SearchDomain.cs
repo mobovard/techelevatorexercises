@@ -26,9 +26,20 @@ namespace SearchApplication.Search
         private IList<string> BuildDomain()
         {
             IList<string> files = new List<string>();
+
+    
             // Step Three: Complete the BuildDomain method
-
-
+            try
+            {
+                foreach (string file in Directory.GetFiles(Folder))
+                {
+                    files.Add(file);
+                }
+            }
+            catch
+            {
+                throw new SearchDomainException();
+            }
 
             return files;
         }

@@ -18,8 +18,21 @@ namespace SearchApplication.Search
         public void IndexFiles()
         {
             // Step Five: Index files
+            IList<string> domainFileList = domain.Files;
 
-
+            for (int i = 0; i < domainFileList.Count; i++)
+            {
+                using (StreamReader streamReader = new StreamReader(domainFileList[i]))
+                {
+                    string stringLine;
+                    while ((stringLine = streamReader.ReadLine()) != null)
+                    {
+                        IndexWords(i, stringLine);
+                    }
+                }
+                    
+            }
+            TELog.Log(IndexedWordsToString());
         }
 
         public IList<string> Search(string searchString)
