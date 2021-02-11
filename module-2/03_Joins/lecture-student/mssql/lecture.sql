@@ -2,7 +2,16 @@
 
 -- Let's find out who made payment 16666:
 
+SELECT *
+FROM payment
+WHERE payment_id = 16666;
+
 -- Ok, that gives us a customer_id, but not the name. We can use the customer_id to get the name FROM the customer table
+
+SELECT *
+FROM payment
+JOIN customer ON payment.customer_id = customer.customer_id
+WHERE payment_id = 16666;
 
 -- We can see that the * pulls back everything from both tables. We just want everything from payment and then the first and last name of the customer:
 
