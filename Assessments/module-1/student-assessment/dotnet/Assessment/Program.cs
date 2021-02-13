@@ -5,16 +5,17 @@ using System.Text;
 
 namespace Assessment
 {
-    class Program
+    public class Program
 
     {
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
-            string filePath = @"C:\Users\Student\workspace\mbovard-c\Assessments\module-1\student-assessment\dotnet\Assessment\Data\CarInput.txt";
+            string filePath = @"C:\Users\Student\workspace\mbovard-c\Assessments\module-1\student-assessment\dotnet\Assessment\Data\CarInput.csv";
 
-          //  List<Car> List(string filePath)
+            List<Car> carList = new List<Car>();
+
             {
-                
+
                 try
                 {
                     using (StreamReader sr = new StreamReader(filePath))
@@ -30,11 +31,10 @@ namespace Assessment
 
                             Car car = new Car(year, model, isClassicCar);
 
-                            List<Car> carList = new List<Car>();
                             carList.Add(car);
 
-                          
-                           
+
+
                         }
                     }
 
@@ -44,17 +44,16 @@ namespace Assessment
                     Console.WriteLine(e.Message);
                 }
 
-                return List<Car>;
+                int ageSum = 0;
+                foreach (Car car in carList)
+                {
+                    ageSum += car.Age;
+                }
+
+                Console.WriteLine($"Total age of all cars: {ageSum}");
             }
 
-
-           // public override string ToString()
-        //{
-            
-          //  return $"CAR - {year} - {make}";
-        //}
-
-    }
+        }
 
 
     }
