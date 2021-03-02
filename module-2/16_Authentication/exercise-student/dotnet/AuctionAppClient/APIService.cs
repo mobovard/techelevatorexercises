@@ -141,19 +141,30 @@ namespace AuctionApp
         {
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
-                throw new NoResponseException("Error occurred - unable to reach server.");
+                throw new NoResponseException("Error occurred - unable to reach server.", response.ErrorException);
             }
             else if (!response.IsSuccessful)
             {
+                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    throw new UnauthorizedException("Please Login");
+                }
 
+                if (response.StatusCode == System.Net.HttpStatusCode.Forbidden)
+                {
+                    throw new ForbiddenException("You dont have permission to do that");
+                }
+
+                throw new NonSuccessException((int)response.StatusCode);
             }
         }
 
         public API_User Login(string submittedName, string submittedPass)
         {
-
-
-            IRestResponse<API_User> response = null;
+            var credentials = new { username = submittedName, password = submittedPass };
+            RestRequest request = new RestRequest(API_BASE_URL + "login");
+            request.AddJsonBody(credentials);
+            IRestResponse<API_User> response = client.Post<API_User>(request);
 
             if (response.ResponseStatus != ResponseStatus.Completed)
             {
@@ -184,4 +195,5 @@ namespace AuctionApp
             client.Authenticator = null;
         }
     }
+
 }
