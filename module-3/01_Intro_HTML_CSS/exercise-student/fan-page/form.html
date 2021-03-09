@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit your info for the fan club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Fan Club Entry Form</h1>
+    </header>
+    <main>
+        <a href="index.html">Home</a>
+        <h2>Enter your info</h2>
+        <form action="/api/example" method="GET">
+            <label for="name">Name:</label>
+            <input id="name" type="text">
+            <br>
+            <label for="emailAddress">Email address:</label>
+            <input id="emailAddress" type="text" name="emailAddress">
+            <br>
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input id="dateOfBirth" type="date" name="dateOfBirth">
+            <br>
+            <label for="favoriteColor">Favorite Color:</label>
+            <input id="reservationTime" type="time" name="reservationTime">
+            <br>
+            <label for="favoriteNumber">Favorite Number:</label>
+            <input id="favoriteNumber" type="number" name="favoriteNumber">
+            <br>
+            <br>
+            <label for="confirmationThatInfoCorrect">Is This Correct?:</label>
+            <input id="confirmationThatInfoCorrect" type="checkbox" name="confirmationThatInfoCorrect">
+            <br>
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </main>
+</body>
+</html>
