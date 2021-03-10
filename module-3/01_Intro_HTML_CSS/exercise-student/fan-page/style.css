@@ -1,14 +1,32 @@
 body{
     font-family:  Helvetica, sans-serif;
-    
+    background-color: black;
 }
 
 h1{
- color: rgb(83, 81, 81);  
+ color: gray;  
  text-align: center; 
 }
 
-
+h3{
+    color: whitesmoke;
+    text-decoration: underline;
+}
+h2{
+    color: whitesmoke;
+}
+p{
+    color: whitesmoke;
+}
+table{
+    color: whitesmoke;
+}
 img{
    height: 200px; 
+}
+form{
+color: whitesmoke;
+}
+.quotes p{
+    font-style: italic;
 }
