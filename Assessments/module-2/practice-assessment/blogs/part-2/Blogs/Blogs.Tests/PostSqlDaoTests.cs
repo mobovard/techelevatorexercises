@@ -31,7 +31,7 @@ namespace Blogs.Tests
 
             subject.Save(newPost);
 
-            Assert.IsTrue(newPost.Id > 0);
+           Assert.IsTrue(newPost.Id > 0);
             Assert.AreEqual(1, GetRowCount("posts"));
         }
 
