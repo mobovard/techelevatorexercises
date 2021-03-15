@@ -1,113 +1,122 @@
-# JavaScript Functions Exercise
+# Client-Side Scripting Exercises
 
-In this exercise, you'll create several JavaScript functions, and for some, you'll also create the JSDoc documentation. The names, parameters, and return values of the functions are provided below.
+For each exercise, create the function and implement it inside of `exercises.js`. The unit tests defined in `tests.js` look for these functions and call them using the signature shown below.
 
-You'll create these functions in `exercises.js`. You can check your work by viewing `test.html` using Live Server in VS Code.
+## Exercises
 
-## Step One: View initial unit test results
+1. **sumDouble** Given two int values, return their sum. Unless the two values are the same, then return double their sum.
 
-Open the folder where this README file is located in VS Code so you can use Live Server to view the unit test results.
+		sumDouble(1, 2) → 3
+		sumDouble(3, 2) → 5
+		sumDouble(2, 2) → 8
 
-Right-click on `test.html` and select "Open with Live Server." In the browser window that opens, you'll see the failing tests for the functions you need to complete.
+		function sumDouble(x, y) {
+			// do logic here
+			// return result;
+			return x + y;
+		}
 
-## Step Two: Complete functions 1-4
+2. **hasTeen** A number is "teen" if it is in the range 13..19 inclusive. Given three int values, return true if 1 or more of them are teen.
 
-### isAdmitted
+		hasTeen(13, 20, 10) → true
+		hasTeen(20, 19, 10) → true
+		hasTeen(20, 10, 13) → true
 
-Write a function called `isAdmitted`. It checks entrance scores and returns `true` if the student is admitted and `false` if rejected.
+3. **lastDigit** Given two non-negative int values, return true if they have the same last digit, such as 27 and 57.
 
-It takes three parameters:
+		lastDigit(7, 17) → true
+		lastDigit(6, 17) → false
+		lastDigit(3, 113) → true
 
-* gpa
-* satScore (optional)
-* recommendation (optional)
+4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color string; otherwise, return the empty string.
 
-Return `true` if any of the conditions below are true:
+		seeColor("redxx") → "red"
+		seeColor("xxred") → ""
+		seeColor("blueTimes") → "blue"
 
-* gpa is above 4.0 OR
-* SAT score is above 1300 OR
-* gpa is above 3.0 and they have a recommendation OR
-* SAT score is above 1200 and they have a recommendation
+5. **oddOnly** Write a function that, given an array of integer of any length, filters out the even number, and returns a new array of just the odd numbers.
 
-Otherwise, reject the student and return `false.`
+		oddOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) → [1, 3, 5, 7, 9, 11];
+		oddOnly([2, 4, 8, 32, 256]); → []
 
-If implemented correctly, all tests under "isAdmitted" pass.
+6. **frontAgain** Given a string, return true if the first two chars in the string also appear at the end of the string, as with "edited."
 
-### useParameterToFilterArray
+		frontAgain("edited") → true
+		frontAgain("edit") → false
+		frontAgain("ed") → true
 
-Write a function called `useParameterToFilterArray` that takes an anonymous function and uses it in the `unfilteredArray` filter function. Return the result.
+7. **cigarParty** When squirrels get together for a party, they like to have cigars. A squirrel party is successful when the number of cigars is between 40 and 60, inclusive. If it is the weekend, there is no upper bound on the number of cigars. Write a squirrel party function that returns true if the party with the given values is successful, or false otherwise.
 
-If implemented correctly, all tests under "useParameterToFilterArray" pass.
+		cigarParty(30, false) → false
+		cigarParty(50, false) → true
+		cigarParty(70, true) → true
 
-### makeNumber
 
-Write a function called `makeNumber` that takes two strings of digits, concatenates them together, and returns the value as a number.
 
-Example: if two strings are passed in "42293" and "443", this function returns the number 42293443.
+8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
 
-If implemented correctly, all tests under "makeNumber" pass.
 
-### addAll
+		fizzBuzz(3) → "Fizz"
+		fizzBuzz(1) → 1
+		fizzBuzz(10) → "Buzz"
+		fizzBuzz(15) → "FizzBuzz"
+		fizzBuzz(8) → 8
 
-Write a function called `addAll` that takes an unknown number of parameters and adds all of them together. Return the sum.
 
-If implemented correctly, all tests under "addAll" pass.
 
-## Step Three: Complete remaining functions and add JSDoc
+9. **filterEvens** Write a function that filters an array to only include even numbers.
 
-### makeHappy
+	```
+	filterEvens([]) → []
+	filterEvens([1, 3, 5]) → []
+	filterEvens([2, 4, 6]) → [2, 4, 6]
+	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
+	```
 
-Write and document a function called `makeHappy` that takes an array and prepends "Happy " to the beginning of all the words and returns them as a new array.
+10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
 
-> Hint: Use the `map` function.
+	```
+	filterBigNumbers([7, 10, 121, 100, 24, 162, 200]) → [121, 100, 162, 200]
+	filterBigNumbers([3, 2, 7, 1, -100, -120]) → []
+	filterBigNumbers([]) → []
+	```
 
-If implemented correctly, all tests under "makeHappy" pass.
+11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a parameter, `x` passed in.
 
-### getFullAddressesOfProperties
+	```
+	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
+	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
+	```
 
-Write and document a function called `getFullAddressesOfProperties` that takes an array of JavaScript objects containing the following keys:
+12. **createObject** Write a function that creates an object with a property called firstName, lastName, and age. Populate the properties with your values.
 
-* `streetNumber`
-* `streetName`
-* `streetType`
-* `city`
-* `state`
-* `zip`
+	```
+	createObject() →
 
-The function returns an array of strings that turns the JavaScript objects into a mailing address in the form of:
+	{
+		firstName,
+		lastName,
+		age
+	}
+	```
 
-`streetNumber streetName streetType city state zip`
+## Challenge Exercises
 
-> Hint: Use `map` and an anonymous function.
+1. **iqTest** Bob is preparing to pass an IQ test. The most frequent task in this test is to find out which one of the given numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob: to check his answers, he needs a program that, among the given numbers, finds one that is different in evenness and returns the position of this number. _Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1, not 0_.
 
-If implemented correctly, all tests under "getFullAddressesOfProperties" pass.
 
-### findLargest
+		iqTest("2 4 7 8 10") → 3 //third number is odd, while the rest are even
+		iqTest("1 2 1 1") → 2 // second number is even, while the rest are odd
+		iqTest("") → 0 // there are no numbers in the given set
+		iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number
 
-Write and document a function called `findLargest`. Using `forEach`, find the largest element in an array. It must work for strings and numbers.
+2. **titleCase** Write a function that converts a string into title case, given an optional list of exceptions (minor words). The list of minor words is given as a string with each word separated by a space. Your function should ignore the case of the minor words string. It should behave in the same way even if the case of the minor word string is changed.
 
-If implemented correctly, all tests under "findLargest" pass.
 
-### Challenge: getSumOfSubArrayValues
+* First argument (required): the original string to be converted.
+* Second argument (optional): space-delimited list of minor words that must always be lowercase except for the first word in the string. The JavaScript tests pass undefined when this argument is unused.
 
-Write and document a function called `getSumOfSubArrayValues`. The function takes an array of arrays, adds up all sub values, and returns the sum.
 
-For example, if you got this array as a parameter:
-
-```js
-[
-    [1, 2, 3],
-    [2, 4, 6],
-    [5, 10, 15]
-];
-```
-
-`getSumOfSubArrayValues` returns 48. To do this, you'll use two nested `reduce` calls with two anonymous functions.
-
-Read the tests to verify you have the correct behavior.
-
-If implemented correctly, all tests under "getSumOfSubArrayValues" pass.
-
----
-
-Once you complete all tasks, all tests pass.
+		titleCase('a clash of KINGS', 'a an the of') // should return: 'A Clash of Kings'
+		titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in the Willows'
+		titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'

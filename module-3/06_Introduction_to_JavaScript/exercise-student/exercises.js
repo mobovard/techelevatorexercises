@@ -1,100 +1,118 @@
-/**
- * Write a function called isAdmitted. It will check entrance
- * scores and return true if the student is admitted and
- * false if rejected. It takes three parameters:
- *
- *     * gpa
- *     * satScore (optional)
- *     * recommendation (optional)
- *
- * Admit them--return true--if:
- * gpa is above 4.0 OR
- * SAT score is above 1300 OR
- * gpa is above 3.0 and they have a recommendation OR
- * SAT score is above 1200 and they have a recommendation
- * OTHERWISE reject it
- *
- * @param {number} gpa the GPA of the student, between 4.2 and 1.0
- * @param {number} [satScore=0] the student's SAT score
- * @param {boolean} [recommendation=false] does the student have a recommendation
- * @returns {boolean} true if they are admitted
- */
+﻿/*
+1. **sumDouble** Given two int values, return their sum. Unless the two values are the 
+    same, then return double their sum.
 
-/**
- * Write a function called useParameterToFilterArray that takes an anonymous
- * function and uses that in the `unfilteredArray` filter function. Return the result.
- *
- * @param {function} filterFunction the function to filter with
- * @returns {number[]} the filtered array
- */
-let unfilteredArray = [1, 2, 3, 4, 5, 6];
+		sumDouble(1, 2) → 3
+		sumDouble(3, 2) → 5
+		sumDouble(2, 2) → 8
 
-/**
- * Write a function called makeNumber that takes two strings
- * of digits, concatenates them together, and returns
- * the value as a number.
- *
- * So if two strings are passed in "42293" and "443", then this function
- * returns the number 42293443.
- *
- * @param {string} first the first string of digits to concatenate
- * @param {string} [second=''] the second string of digits to concatenate
- * @returns {number} the resultant number
- */
-
-/**
- * Write a function called addAll that takes an unknown number of parameters
- * and adds all of them together. Return the sum.
- *
- * @param {...number} num a series of numbers to add together
- * @returns {number} the sum of all the parameters (or arguments)
- */
+		function sumDouble(x, y) {
+			// do logic here
+			// return result;
+			return x + y;
+        }
+*/
 
 /*
- * Write and document a function called makeHappy that takes
- * an array and prepends 'Happy ' to the beginning of all the
- * words and returns them as a new array. Use the `map` function.
- */
+2. **hasTeen** We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
+    Given 3 int values, return true if 1 or more of them are teen.
+
+		hasTeen(13, 20, 10) → true
+		hasTeen(20, 19, 10) → true
+		hasTeen(20, 10, 13) → true
+*/
+
+/* 
+3. **lastDigit** Given two non-negative int values, return true if they have the same 
+    last digit, such as with 27 and 57.
+
+		lastDigit(7, 17) → true
+		lastDigit(6, 17) → false
+		lastDigit(3, 113) → true
+*/
 
 /*
- * Write and document a function called getFullAddressesOfProperties
- * that takes an array of JavaScript objects containing the
- * following keys:
- *     * streetNumber
- *     * streetName
- *     * streetType
- *     * city
- *     * state
- *     * zip
- *
- * and returns an array of strings that turns the JavaScript objects
- * into a mailing address in the form of:
- *     streetNumber streetName streetType city state zip
- *
- * Use `map` and an anonymous function.
- */
+4. **seeColor** Given a string, if the string begins with "red" or "blue" return that color 
+    string, otherwise return the empty string.
+
+		seeColor("redxx") → "red"
+		seeColor("xxred") → ""
+        seeColor("blueTimes") → "blue"
+*/
 
 /*
- * Write and document a function called findLargest.
- *
- * Using `forEach`, find the largest element in an array.
- * It must work for strings and numbers.
- */
+5. **oddOnly** Write a function that given an array of integer of any length, filters out 
+    the even number, and returns a new array of just the the odd numbers.
+
+		oddOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]) → [1, 3, 5, 7, 9, 11];
+		oddOnly([2, 4, 8, 32, 256]); → []
+*/
 
 /*
- * CHALLENGE
- * Write and document a function called getSumOfSubArrayValues.
- *
- * Take an array of arrays, adds up all sub values, and returns
- * the sum. For example, if you got this array as a parameter:
- * [
- *   [1, 2, 3],
- *   [2, 4, 6],
- *   [5, 10, 15]
- * ];
- *
- * The function returns 48. To do this, you will use two nested `reduce`
- * calls with two anonymous functions.
- *
- * Read the tests to verify you have the correct behavior.
- */
+6. **frontAgain** Given a string, return true if the first 2 chars in the string also appear 
+    at the end of the string, such as with "edited".
+
+		frontAgain("edited") → true
+		frontAgain("edit") → false
+		frontAgain("ed") → true
+*/
+
+/*
+7. **cigarParty** When squirrels get together for a party, they like to have cigars. 
+A squirrel party is successful when the number of cigars is between 40 and 60, inclusive. 
+Unless it is the weekend, in which case there is no upper bound on the number of cigars. 
+Write a squirrel party function that return true if the party with the given values is successful, 
+or false otherwise.
+
+		cigarParty(30, false) → false
+		cigarParty(50, false) → true
+		cigarParty(70, true) → true
+*/
+
+/*
+8. **fizzBuzz** Because you know you can't live without it, FizzBuzz.
+
+		fizzBuzz(3) → "Fizz"
+		fizzBuzz(1) → 1
+		fizzBuzz(10) → "Buzz"
+		fizzBuzz(15) → "FizzBuzz"
+		fizzBuzz(8) → 8
+*/
+
+/*
+9. **filterEvens** Write a function that filters an array to only include even numbers.
+
+	filterEvens([]) → []
+	filterEvens([1, 3, 5]) → []
+	filterEvens([2, 4, 6]) → [2, 4, 6]
+	filterEvens([100, 8, 21, 24, 62, 9, 7]) → [100, 8, 24, 62]
+*/
+
+/*
+10. **filterBigNumbers** Write a function that filters numbers greater than or equal to 100.
+
+	filterBigNumbers([7, 10, 121, 100, 24, 162, 200]) → [121, 100, 162, 200]
+	filterBigNumbers([3, 2, 7, 1, -100, -120]) → []
+	filterBigNumbers([]) → []
+*/
+
+/*
+11. **filterMultiplesOfX** Write a function to filter numbers that are a multiple of a 
+parameter, `x` passed in.
+
+	filterMultiplesOfX([3, 5, 1, 9, 18, 21, 42, 67], 3) → [3, 9, 18, 21, 42]
+	filterMultiplesOfX([3, 5, 10, 20, 18, 21, 42, 67], 5) → [5, 10, 20]
+*/
+
+/*
+12. **createObject** Write a function that creates an object with a property called 
+firstName, lastName, and age. Populate the properties with your values.
+
+	createObject() →
+
+	{
+		firstName,
+		lastName,
+		age
+	}
+*/
