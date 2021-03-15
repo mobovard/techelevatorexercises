@@ -6,6 +6,7 @@ body {
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
 }
 
 .logo {
@@ -25,6 +26,8 @@ li {
   color: #707070;
   padding: 0 20px 0 0;
   margin-left: 20px;
+  display: inline;
+  justify-content: flex-start;
 }
 
 li a,
@@ -38,7 +41,9 @@ li a:hover {
   text-decoration: underline;
 }
 
-.spacer {}
+.spacer {
+  flex-grow: 1;
+}
 
 .my-account img {
   width: 32px;

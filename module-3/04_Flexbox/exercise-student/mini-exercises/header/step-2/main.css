@@ -6,12 +6,16 @@ body {
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
 }
 
 .logo {
   width: 140px;
 }
-
+ul{
+  display: flex;
+  justify-content: center;
+}
 nav {
   flex-grow: 1;
 }
