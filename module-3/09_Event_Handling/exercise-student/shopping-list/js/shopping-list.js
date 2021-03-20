@@ -1,17 +1,22 @@
 let allItemsIncomplete = true;
-const pageTitle = 'My Shopping List';
-const groceries = [
-  { id: 1, name: 'Oatmeal', completed: false },
-  { id: 2, name: 'Milk', completed: false },
-  { id: 3, name: 'Banana', completed: false },
-  { id: 4, name: 'Strawberries', completed: false },
-  { id: 5, name: 'Lunch Meat', completed: false },
-  { id: 6, name: 'Bread', completed: false },
-  { id: 7, name: 'Grapes', completed: false },
-  { id: 8, name: 'Steak', completed: false },
-  { id: 9, name: 'Salad', completed: false },
-  { id: 10, name: 'Tea', completed: false }
-];
+
+let groceries = [];
+let pageTitle = '';
+function init() {
+  pageTitle = 'My Shopping List';
+  groceries = [
+    { id: 1, name: 'Oatmeal', completed: false },
+    { id: 2, name: 'Milk', completed: false },
+    { id: 3, name: 'Banana', completed: false },
+    { id: 4, name: 'Strawberries', completed: false },
+    { id: 5, name: 'Lunch Meat', completed: false },
+    { id: 6, name: 'Bread', completed: false },
+    { id: 7, name: 'Grapes', completed: false },
+    { id: 8, name: 'Steak', completed: false },
+    { id: 9, name: 'Salad', completed: false },
+    { id: 10, name: 'Tea', completed: false }
+  ];
+}
 
 /**
  * This function will get a reference to the title and set its text to the value
@@ -37,5 +42,53 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+document.addEventListener("DOMContentLoaded", () => {
+
+  init()
+  setPageTitle()
+  displayGroceries()
+
+  const tasks = document.querySelectorAll('li')
+
+  tasks.forEach((task) => {
+
+    // when you click on a task, mark it completed
+    task.addEventListener('click', () => {
+      if( !task.classList.contains('completed') ) {
+        task.classList.add('completed')
+        task.querySelector('i').classList.add('completed')
+      }
+    })
+
+    // when you double click a task, remove the completed class
+    task.addEventListener('dblclick',() => {
+      if( task.classList.contains('completed') ) {
+        task.classList.remove('completed')
+        task.querySelector('i').classList.remove('completed')
+      }
+    })
+
+  })
+
+  // mark all tasks as completed
+  const completeAll = document.getElementById('toggleAll')
+  completeAll.addEventListener('click',() => {
+
+    if (allItemsIncomplete == true) 
+    {
+      tasks.forEach((task) => {
+        task.classList.add('completed')
+        task.querySelector('i').classList.add('completed')})
+      allItemsIncomplete = false;
+      completeAll.innerText = "Mark All Incomplete";
+    }
+    else 
+    {
+      tasks.forEach((task) => {
+        task.classList.remove('completed')
+        task.querySelector('i').classList.remove('completed')})
+      allItemsIncomplete = true;
+      completeAll.innerText = "Mark All Complete";
+    }
+  })
+})

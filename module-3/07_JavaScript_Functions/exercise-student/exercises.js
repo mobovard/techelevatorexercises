@@ -92,7 +92,7 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
         return result;
     }
 
-/*
+/**
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
