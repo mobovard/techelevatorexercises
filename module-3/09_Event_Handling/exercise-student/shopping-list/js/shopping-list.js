@@ -48,45 +48,41 @@ document.addEventListener("DOMContentLoaded", () => {
   setPageTitle()
   displayGroceries()
 
-  const tasks = document.querySelectorAll('li')
+  const groceries = document.querySelectorAll('li')
 
-  tasks.forEach((task) => {
+  groceries.forEach((grocery) => {
 
-    // when you click on a task, mark it completed
-    task.addEventListener('click', () => {
-      if( !task.classList.contains('completed') ) {
-        task.classList.add('completed')
-        task.querySelector('i').classList.add('completed')
+    grocery.addEventListener('click', () => {
+      if( !grocery.classList.contains('completed') ) {
+        grocery.classList.add('completed')
+        grocery.querySelector('i').classList.add('completed')
       }
     })
 
-    // when you double click a task, remove the completed class
-    task.addEventListener('dblclick',() => {
-      if( task.classList.contains('completed') ) {
-        task.classList.remove('completed')
-        task.querySelector('i').classList.remove('completed')
+    grocery.addEventListener('dblclick',() => {
+      if( grocery.classList.contains('completed') ) {
+        grocery.classList.remove('completed')
+        grocery.querySelector('i').classList.remove('completed')
       }
     })
-
   })
 
-  // mark all tasks as completed
   const completeAll = document.getElementById('toggleAll')
   completeAll.addEventListener('click',() => {
 
     if (allItemsIncomplete == true) 
     {
-      tasks.forEach((task) => {
-        task.classList.add('completed')
-        task.querySelector('i').classList.add('completed')})
+      groceries.forEach((grocery) => {
+        grocery.classList.add('completed')
+        grocery.querySelector('i').classList.add('completed')})
       allItemsIncomplete = false;
       completeAll.innerText = "Mark All Incomplete";
     }
     else 
     {
-      tasks.forEach((task) => {
-        task.classList.remove('completed')
-        task.querySelector('i').classList.remove('completed')})
+      groceries.forEach((grocery) => {
+        grocery.classList.remove('completed')
+        grocery.querySelector('i').classList.remove('completed')})
       allItemsIncomplete = true;
       completeAll.innerText = "Mark All Complete";
     }
