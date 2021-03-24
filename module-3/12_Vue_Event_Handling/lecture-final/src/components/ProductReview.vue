@@ -5,12 +5,12 @@
     <p class="description">{{ description }}</p>
 
     <div class="well-display">
-      <div class="well">
+      <div class="well"  v-on:click="filter = 0">
         <span class="amount">{{ averageRating }}</span>
         Average Rating
       </div>
 
-      <div class="well" v-on:click="filterReviews(1)">
+      <div class="well" v-on:click="filter = 1">
         <span class="amount">{{ numberOfOneStarReviews }}</span>
         1 Star Review{{ numberOfOneStarReviews === 1 ? "" : "s" }}
       </div>
@@ -63,13 +63,13 @@
       </div>
 
       <input type="submit" />
-      <input type="button" value="Cancel" />
+      <input v-on:click="cancelReview" type="button" value="Cancel" />
     </form>
 
     <div
       class="review"
       v-bind:class="{ favorited: review.favorited }"
-      v-for="review in reviews"
+      v-for="review in filteredReviews"
       v-bind:key="review.id"
     >
       <h4>{{ review.reviewer }}</h4>
@@ -143,7 +143,6 @@ export default {
           id: 4,
         },
       ],
-      filteredReviews:[]
     };
   },
   computed: {
@@ -154,39 +153,41 @@ export default {
       return (sum / this.reviews.length).toFixed(2);
     },
     numberOfOneStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return review.rating === 1 ? currentCount + 1 : currentCount;
-      }, 0);
+      return this.numberOfReviews(1);
     },
     numberOfTwoStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return review.rating === 2 ? currentCount + 1 : currentCount;
-      }, 0);
+      return this.numberOfReviews(2);
     },
     numberOfThreeStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return review.rating === 3 ? currentCount + 1 : currentCount;
-      }, 0);
+      return this.numberOfReviews(3);
     },
     numberOfFourStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return review.rating === 4 ? currentCount + 1 : currentCount;
-      }, 0);
+      return this.numberOfReviews(4);
     },
     numberOfFiveStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return review.rating === 5 ? currentCount + 1 : currentCount;
-      }, 0);
+      return this.numberOfReviews(5);
     },
-    
+    filteredReviews() {
+    return this.reviews.filter(review => {
+        return this.filter === 0 ? true : this.filter === review.rating;
+    });
+}
   },
   methods: {
-
+    numberOfReviews(numOfStars) {
+        return this.reviews.reduce((currentCount, review) => {
+            return currentCount + (review.rating === numOfStars);
+        }, 0);
+    },
     addNewReview() {
       this.reviews.push(this.newReview);
       this.newReview = {};
       this.showForm = false;
     },
+    cancelReview() {
+      this.newReview = {};
+      this.showForm = false;
+    }
   },
 };
 </script>
