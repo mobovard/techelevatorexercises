@@ -178,16 +178,10 @@ export default {
         return review.rating === 5 ? currentCount + 1 : currentCount;
       }, 0);
     },
+    
   },
   methods: {
-    filterReviews(numberOfStars){
 
-      this.filterReviews = this.reviews.filter(
-        review => {
-         return numberOfStars ? review.rating === numberOfStars : true;
-        }
-      )
-    },
     addNewReview() {
       this.reviews.push(this.newReview);
       this.newReview = {};
