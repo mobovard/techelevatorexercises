@@ -176,7 +176,7 @@ export default {
   methods: {
     numberOfReviews(numOfStars) {
         return this.reviews.reduce((currentCount, review) => {
-            return currentCount + (review.rating === numOfStars);
+            return (review.rating === numOfStars) ? currentCount + 1 : currentCount;
         }, 0);
     },
     addNewReview() {
